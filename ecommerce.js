@@ -110,10 +110,7 @@ prix x chiffre remise / 100
 let totalOfBasket = 0
 
 for (let article of basket) {
-    //console.log(totalOfBasket)
     priceOfArticles = article.price;
-    //console.log(priceOfArticles)
-    //console.log(totalOfBasket)
     if (article.quantity > 1) {
         priceOfArticles = article.price * article.quantity;
     }
