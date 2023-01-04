@@ -1,5 +1,5 @@
 const shipping = 10
-const basket = [
+const basketTechnology = [
     {
         name: 'enceinte bluetooth',
         price: 50,
@@ -36,31 +36,7 @@ const basket = [
     }
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //450 + 95 = 545 + 10 = 555
-
-
 
                         // SOLUTION //
 /* let totalOfBasket = 0;
@@ -79,8 +55,16 @@ for (let item of basket) {
 const totalFinal = totalOfBasket + shipping
 console.log('totalFinal', totalFinal)
  */
+/* let totalOfBasket = 0
 
-
+for (let article of basket) {
+    priceOfArticles = article.price;
+    if (article.quantity > 1) {
+        priceOfArticles = article.price * article.quantity;
+    }
+    totalOfBasket = priceOfArticles + totalOfBasket
+}
+console.log(totalOfBasket) */
 
 /* LA BOUCLE FOR OF 
 
@@ -93,27 +77,60 @@ for ( let item of tableau){
 
 totalOfbasket 
 
-20E x 10/100
+montant de la remise 20E x 10/100
 prix x chiffre remise / 100 
 
 */
 
-                    // INSTRUCTIONS
-// Je veux afficher dans la console le prix total de mon panier
-// Afficher dans la console le prix total de mon panier avec les coupons.
+                    // INSTRUCTIONS # 1
+/* Je veux afficher dans la console le prix total de mon panier
+et ensuite le prix de mon panier avec la livraison  */
+
+/* let totalOfBasket = 0;
+
+for (let article of basket ) {
+    let priceOfArticles = article.price
+    if (article.quantity > 1){
+        priceOfArticles = article.price * article.quantity
+    }
+    totalOfBasket = priceOfArticles + totalOfBasket
+}
+console.log(totalOfBasket + shipping) */
+
+            /* Afficher dans la console le prix total de 
+            mon panier et livraison en ajoutant les remises. */
+
+
+const calculeDuPrixDunPanier = (basket) => {
+    let totalOfBasket = 0;
+    for (let article of basket) {
+        let sumOfCoupons = 0;
+        let priceOfArticles = article.price;
+        if (article.quantity > 1){
+            priceOfArticles = article.price * article.quantity;
+        }
+        const values = Object.values(article.coupons);
+        for (let value of values) {
+            sumOfCoupons = value + sumOfCoupons;
+        }
+        const globalDiscount = priceOfArticles * (sumOfCoupons / 100)
+        const articleRemised = priceOfArticles - globalDiscount
+        totalOfBasket = articleRemised + totalOfBasket
+    }
+    return (totalOfBasket + shipping)
+}
+
+const finalPriceToPay = calculeDuPrixDunPanier(basketTechnology)
+console.log('finalPriceToPay', finalPriceToPay)
+
+
+
 // Avec une boucle FOR OF  FOR et FOR IN
 
 // faire une fonction qui calcule le prix total de mes articles 
 // faire une fonction qui calcule le prix total du panier et la livraison 
 // faire une fonction qui calcule une remise 
 
-let totalOfBasket = 0
 
-for (let article of basket) {
-    priceOfArticles = article.price;
-    if (article.quantity > 1) {
-        priceOfArticles = article.price * article.quantity;
-    }
-    totalOfBasket = priceOfArticles + totalOfBasket
-}
-console.log(totalOfBasket)
+
+
