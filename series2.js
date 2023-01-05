@@ -1,4 +1,4 @@
-/* const calculMoyenne = numbers => {
+/* /* const calculMoyenne = numbers => {
 
     if (numbers.length === 0){
         return "pas encore de notes"
@@ -38,8 +38,7 @@ console.log(word.join())
 const ratingsOfTheWitcherSerie = [2, 3, 4] */
 
 /* console.log(ratingsOfDarkSerie) */
-
-const darkSerie = {
+/* onst darkSerie = {
     ratings: [1, 2, 3],
     view: 168,
     title: 'Dark'
@@ -75,4 +74,29 @@ const calculateAverage = (tableau) => {
 for (let serie of series) {
     const result = calculateAverage(serie.ratings)
     console.log(result)
+} */
+
+
+const calculateAverageRating = (array) => {
+
+//const array = [4, 10, 10];
+
+let sumOfNotes = 0;
+
+for (let element of array){
+    //console.log(element)
+
+    sumOfNotes = element + sumOfNotes;
+    //console.log(sumOfNotes)
 }
+    return sumOfNotes / array.length
+}
+
+//console.log('moyenne =', moyenne)
+
+const darkSerie = [8, 9, 10]
+
+const moyenneOfSerie = calculateAverageRating(darkSerie)
+
+console.log(moyenneOfSerie)
+
