@@ -10,9 +10,8 @@ d'avoir le moins de tentatives  */
 console.log(typeof("a"*1)) */
 
 let numberPlayer1 = prompt('Joueur 1 veuillez saisir un nombre compris entre 0 et 100') * 1;
-/* console.log(numberPlayer1)
 
-if(numberPlayer1 === NaN) {
+/* if(numberPlayer1 === NaN) {
     console.log('rentre lorsque numb1 === NaN')
 }
 if(!numberPlayer1) {
@@ -23,12 +22,23 @@ while (numberPlayer1 < 0 || numberPlayer1 > 100 || !numberPlayer1){
     numberPlayer1 = prompt('Joueur 1 veuillez saisir un nombre compris entre 0 et 100') * 1
 }
 
+let numberOfTry = 1;
+
 let numberPlayer2 = prompt('Joueur 2 votre mission est de deviner le nombre du joueur 1 ') * 1;
 while (numberPlayer2 < 0 || numberPlayer2 > 100 || !numberPlayer2){
-    numberPlayer2 = prompt('Joueur 2 veuillez saisir un nombre compris entre 0 et 100') * 1
+    numberOfTry++
+    let result = '';
+    if (numberPlayer2 > 100){
+        result = "veuillez taper un nombre inférieur ou égal à 100";
+    }
+    else if (numberPlayer2 < 0){
+        result = "veuillez taper un nombre supérieur ou égal à 0";
+    }
+    else{
+        result = "espèce de con tape une un chiffre"
+    }
+    numberPlayer2 = prompt(result) * 1
 }
-
-let numberOfTry=0;
 
 while (numberPlayer2 !== numberPlayer1) {
     numberOfTry++
