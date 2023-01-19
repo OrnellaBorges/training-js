@@ -49,12 +49,12 @@ const theWitcherSerie = {
     title: 'The Witcher'
 }
 const ghost = {
-    ratings: [2, 9, 4],
+    ratings: [3, 4, 5],
     view: 90,
     title: 'Ghost'
 }
 
-const series = []
+const series = [darkSerie, theWitcherSerie, ghost]
 
 const calculateAverage = (tableau) => {
     if (tableau.length) {
@@ -98,3 +98,5 @@ for (let serie of series) {
     const result = calculateAverage(serie.ratings)
     console.log(result)
 }
+
+//console.log('test', '0345' / 3)
