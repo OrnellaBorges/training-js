@@ -1,9 +1,6 @@
 //POKEMON EXERCICES : AFFICHER LES POKEMONS 
 
 
-
-
-
 // EXO 1 : afficher le ou les pokemons que l'on peut controler avec le badg selectionné
 
 
