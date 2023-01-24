@@ -144,6 +144,6 @@ const maFigure = (maxLine) => {
 // Start script
 input.addEventListener("input",function(){
     figure.innerHTML = ''
-    numberInput = +input.value * 1
+    numberInput = input.value * 1
     maFigure(numberInput)
 })
