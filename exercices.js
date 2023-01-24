@@ -69,12 +69,12 @@ tab.sort(trierOrdreCroissant)
 console.log(tab) */
 // classer les nombres dans l'ordre croissant et dans l'ordre décroissant. ()
 
-const tab = [7, 10, 1, 15, 7, 72, 500, 98, 105]
+/* const tab = [7, 10, 1, 15, 7, 72, 500, 98, 105]
 function trierOrdreCroissant(a, b){
     return a - b 
 }
 tab.sort(trierOrdreCroissant)
-console.log(tab)
+console.log(tab) */
 
 
 /* //const months = ['Feb', 'Jan', 'Apr', 'Dec', 'Oct']
@@ -94,7 +94,7 @@ console.log(months) */
 
 
 
-const randomColors = ['Vert', 'Jaune', 'Noir', 'Blanc', 'Marine']
+/* const randomColors = ['Vert', 'Jaune', 'Noir', 'Blanc', 'Marine']
 
 const randomColorsCopy = [...randomColors] // faire une copie parfaite de la constante
 
@@ -108,5 +108,42 @@ console.log('origin avant le sort: ', randomColors)
 randomColorsCopy2.sort(sortColors)
 console.log('copy2: ', randomColorsCopy2)
 console.log('original: ', randomColors)
+ */
 
-// 
+
+// EXERCICE DU TRIANGLE GENERE PAR UTILISATEUR
+
+
+
+// Mes constantes 
+const input = document.querySelector("input")
+const figure = document.querySelector("figure")
+let numberInput
+
+
+/* for(let i = 0; i < 10; i++){
+    let cumul = ''
+    for(let j = 0; j < i+1; j++){
+        cumul = cumul + 'X'
+    }
+    document.write(`<p>${cumul}</p>`)
+} */
+
+
+// Mes fonctions
+const maFigure = (maxLine) => {
+    let letter = ''
+    for(let i = 0; i < maxLine; i++){
+        letter = letter + 'X'
+        const paragraphe = document.createElement("p")
+        paragraphe.innerText = letter
+        figure.appendChild(paragraphe)
+    }
+}
+
+// Start script
+input.addEventListener("input",function(){
+    figure.innerHTML = ''
+    numberInput = +input.value * 1
+    maFigure(numberInput)
+})
